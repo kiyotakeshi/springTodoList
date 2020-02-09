@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TODO List</title>
+</head>
+
+<body>
+    <h1>TODO List</h1>
+    <form method="post" action="/todo_list">
+        new TODO:
+        <input type="text" name="register" th:value="${register_value}" />
+        <input type="submit" value="add" />
+    </form>
+</body>
+
+</html>
