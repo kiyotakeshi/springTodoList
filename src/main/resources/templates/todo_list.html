@@ -8,11 +8,12 @@
 
 <body>
     <h1>TODO List</h1>
-    <form method="post" action="/todo_list">
+    <form method="post" action="/todo">
         new TODO:
-        <input type="text" name="register" th:value="${register_value}" />
+        <input type="text" name="registered_item" th:value="${registered_item}" />
         <input type="submit" value="add" />
     </form>
+    <p th:text="${registeredItem}"></p>
 </body>
 
 </html>
