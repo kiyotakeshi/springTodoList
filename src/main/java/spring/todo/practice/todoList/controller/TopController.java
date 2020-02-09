@@ -6,6 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import spring.todo.practice.todoList.object.TodoItem;
+import spring.todo.practice.todoList.repository.TodoItemRepository;
+
+import java.util.List;
 
 @Controller
 public class TopController {
@@ -13,8 +17,16 @@ public class TopController {
     @Autowired
     private  TopController topController;
 
+    @Autowired
+    private TodoItemRepository todoItemRepository;
+
     @GetMapping("/todo")
-    public String getTodoList(){
+    public String getTodoList(Model model){
+
+        List<TodoItem> todoItemList = todoItemRepository.findAll();
+
+        model.addAttribute("todoList", todoItemList);
+
         return "todo_list";
     }
 
