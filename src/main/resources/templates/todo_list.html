@@ -8,13 +8,29 @@
 
 <body>
     <h1>TODO List</h1>
+
     <form method="post" action="/todo">
         new TODO:
         <input type="text" name="registered_item" th:value="${registered_item}" />
         <input type="submit" value="add" />
+        <input type="submit" value="delete" />
     </form>
+
     <p th:text="${registeredItem}"></p>
     <p th:text="${todoList}"></p>
+
+    <table>
+        <tr>
+            <th class="td_btn">ID</a></th>
+            <th class="td_btn">Date</a></th>
+            <th class="td_btn">Item</a></th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2020/02/09</td>
+            <td>sleep</td>
+        </tr>
+    </table>
 
 </body>
 
