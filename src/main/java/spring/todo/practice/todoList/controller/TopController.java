@@ -15,13 +15,13 @@ import java.util.List;
 public class TopController {
 
     @Autowired
-    private  TopController topController;
+    private TopController topController;
 
     @Autowired
     private TodoItemRepository todoItemRepository;
 
     @GetMapping("/todo")
-    public String getTodoList(Model model){
+    public String getTodoList(Model model) {
 
         List<TodoItem> todoItemList = todoItemRepository.findAll();
 
@@ -31,7 +31,14 @@ public class TopController {
     }
 
     @PostMapping("/todo")
-    public String postRequest(@RequestParam("registered_item")String str, Model model){
+    public String postRequest(@RequestParam("registered_item") String str, Model model) {
+
+        if (str == null || str.isEmpty()) {
+//            System.out.println("delete");
+//            todoItemRepository.deleteAll();
+        } else {
+            System.out.println("register");
+        }
 
         model.addAttribute("registeredItem", str);
 

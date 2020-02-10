@@ -16,8 +16,8 @@
         <input type="submit" value="delete" />
     </form>
 
-    <p th:text="${registeredItem}"></p>
-    <p th:text="${todoList}"></p>
+    <!-- <p th:text="${registeredItem}"></p> -->
+    <!-- <p th:text="${todoList}"></p> -->
 
     <table>
         <tr>
@@ -25,13 +25,17 @@
             <th class="td_btn">Date</a></th>
             <th class="td_btn">Item</a></th>
         </tr>
-        <tr>
-            <td>1</td>
-            <td>2020/02/09</td>
-            <td>sleep</td>
+
+        <tr th:if="${todoList.empty}">
+            <td colspan="3">No TODO items</td>
+        </tr>
+
+        <tr th:each="object:${todoList}" th:object="${object}">
+            <td th:text="*{itemId}"></td>
+            <td th:text="*{registerDate}"></td>
+            <td th:text="*{todoItem}"></td>
         </tr>
     </table>
-
 </body>
 
 </html>
