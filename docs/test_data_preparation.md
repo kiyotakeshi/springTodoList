@@ -41,6 +41,8 @@ CREATE TABLE todo_list_info (
   , todo_item VARCHAR(20) NOT NULL COMMENT'やること'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- not required process
+-- optional process(if you want to insert test data)
 INSERT INTO todo_list_info
  (register_date, todo_item)
  values('2019/10/05','Buy ketchup');
@@ -59,6 +61,7 @@ INSERT INTO todo_list_info
 ```sql
 delete from todo_list_info where item_id in(1,2,3);
 
+-- if you want to reset table or db
 DROP TABLE todo_list_info;
 
 DROP DATABASE TodoListDB;
