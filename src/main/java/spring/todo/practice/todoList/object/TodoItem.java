@@ -13,17 +13,19 @@ public class TodoItem {
     @Id
     @Column(name = dataConstants.ITEM_ID)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int itemId;
+    public Long itemId;
+
     @Column(name = dataConstants.REGISTER_DATE)
     public String registerDate;
+
     @Column(name = dataConstants.TODO_ITEM)
     public String todoItem;
 
-    public int getItemId() {
+    public Long getItemId() {
         return itemId;
     }
 
-    public void setItemId(int itemId) {
+    public void setItemId(Long itemId) {
         this.itemId = itemId;
     }
 
